@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- tailwind css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- for custom css -->
+  <style type="text/tailwindcss">
+    @layer componets {
+      .btn{
+      @apply px-7 py-2
+    }}
+    @layer utilities {
+      .text-strok-1{
+        -webkit-text-stroke: 1px white
+      }
+    }
+    
+  </style>
+
+</head>
+
+<body class="bg-[#222]">
+  <div
+    class="absolute top-2 left-2 rounded-full bg-gradient-to-b from-pink-500 to-violet-700 h-[300px] w-[300px] z-[-1] blur-2xl">
+  </div>
+  <div
+    class="absolute hidden sm:block top-[10%] left-[60%] rounded-full bg-gradient-to-b from-red-500 to-orange-700 h-[300px] w-[300px] z-[-1] blur-2xl">
+  </div>
+
+  <header class=" w-full sm:w-4/5 sm:mx-auto ">
+    <!-- navigation bar -->
+    <nav class="py-3 text-white flex justify-between items-center  ">
+      <div class="logo">
+        <img src="logomain.png" alt="logo" class="max-h-10 min-">
+      </div>
+
+      <div class="menu hidden list-none gap-4 sm:flex">
+        <li><a href="#" class="hover:text-violet-400">About</a></li>
+        <li><a href="#" class="hover:text-violet-400">Service</a></li>
+        <li><a href="#" class="hover:text-violet-400">Portfolio</a></li>
+        <li><a href="#" class="hover:text-violet-400">Project</a></li>
+        <li><a href="#" class="hover:text-violet-400">Blog</a></li>
+      </div>
+
+      <div class="login ">
+        <i class="fa-solid fa-bars sm:hidden m-4 hover:opacity-80 toggle" id="toggle"></i>
+        <a href="login"
+          class="btn rounded-lg shadow-lg hover:shadow-indigo-400 hidden text-md sm:block bg-gradient-to-l from-pink-500 to-violet-700">Login</a>
+      </div>
+    </nav>
+    <!-- on mobile -->
+    <div class="mobile hidden ">
+      <div class=" absolute left-0 h-full w-full bg-stone-100 list-none text-center z-[3] text-xl">
+        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">About us</a>
+        </li>
+        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Service</a></li>
+        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Portfolio</a>
+        </li>
+        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Projects</a>
+        </li>
+        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Blog</a></li>
+        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="login"
+            class="btn rounded-lg shadow-lg hover:shadow-indigo-400  sm:hidden bg-violet-500 text-white ">Login</a></li>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- hero section -->
+  <section id="hero" class=" h-4/5 w-4/5 mx-auto  text-white p-4 ">
+    <img id="asset" src="./pngwing.com.png" class="absolute max-h-40  left-60 top-20 
+    z-[-1] sm:left-[70%] sm:max-h-[350px]">
+    <h1 class="text-5xl sm:text-8xl mt-5 font-arial font-black">Hey,iam Ankit<br><span
+        class="text-strok-1 text-transparent"> A Web Developer &</span><br>Web designer</h1>
+    <p class="mt-5">Code is like humar.When you have to explain it, it's bad</p>
+  </section>
+
+  <!-- service include section -->
+  <section class="w-4/5 mx-auto mt-20">
+    <h1 class="text-2xl sm:text-6xl mb-20 font-arial font-black text-stone-300  ">Latest Projects</h1>
+`
+  </section>
+
+  <!-- Steps section -->
+  <section>
+  </section>
+
+  <!-- why section -->
+  <section>
+
+  </section>
+  <!-- footer -->
+  <footer>
+  </footer>
+
+  <!-- gsap for animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    let menu = document.querySelector("#toggle")
+
+    gsap.from('#asset', {
+      y: 60,
+      duration: 1,
+      repeat: -1,
+      yoyo: true,
+    });
+
+    menu.addEventListener('click', () => {
+      let sm_menu = document.querySelector(".mobile")
+      sm_menu.classList.toggle('hidden')
+
+      gsap.from('.mobile div', {
+        opacity: 0,
+        y: 50,
+        duration: 0.2,
+
+
+      })
+    })
+
+  </script>
+</body>
+
+</html>
