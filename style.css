@@ -1,0 +1,39 @@
+.scrolling-icons {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.scrolling-icons::before,
+.scrolling-icons::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10%; /* Adjust width for larger/smaller fade areas */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scrolling-icons::before {
+  left: 0;
+  background: linear-gradient(to right, #222, rgba(249, 250, 251, 0));
+}
+
+.scrolling-icons::after {
+  right: 0;
+  background: linear-gradient(to left, #222, rgba(249, 250, 251, 0));
+}
+
+.icon-container {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+/* Icon styling using Tailwind CSS */
+i {
+  z-index: 0;
+}
