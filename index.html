@@ -4,28 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <!-- tailwind css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
   <!-- for custom css -->
   <style type="text/tailwindcss">
     @layer componets {
       .btn{
-      @apply px-7 py-2
-    }}
+        @apply px-7 py-2 rounded-lg shadow-lg hover:shadow-indigo-400 bg-violet-500 
+    }
+  }
     @layer utilities {
       .text-strok-1{
         -webkit-text-stroke: 1px white
       }
+      .Montserrat{
+        font-family: 'Montserrat'
+      }
+      
     }
     
   </style>
-
 </head>
 
-<body class="bg-[#222]">
+<body class="bg-[url('./assets/background.jpg')] bg-fixed relative" id="nav">
   <div
     class="absolute top-2 left-2 rounded-full bg-gradient-to-b from-pink-500 to-violet-700 h-[300px] w-[300px] z-[-1] blur-2xl">
   </div>
@@ -33,30 +42,28 @@
     class="absolute hidden sm:block top-[10%] left-[60%] rounded-full bg-gradient-to-b from-red-500 to-orange-700 h-[300px] w-[300px] z-[-1] blur-2xl">
   </div>
 
-  <header class=" w-full sm:w-4/5 sm:mx-auto ">
+  <header class=" w-full sm:px-20  backdrop-blur-2xl  bg-white/10 sm:bg-none fixed z-[999]">
     <!-- navigation bar -->
-    <nav class="py-3 text-white flex justify-between items-center  ">
-      <div class="logo">
-        <img src="logomain.png" alt="logo" class="max-h-10 min-">
+    <nav class="py-3 text-white flex justify-between items-center  border-b-2 border-slate-100/50 sm:border-none uppercase  Montserrats ">
+      <div class="logo flex items-center">
+        <img src="./assets/logomain.png" alt="logo" class="max-h-10 min-"><span class="font-black text-xl">Ankit babu</span>
       </div>
 
       <div class="menu hidden list-none gap-4 sm:flex">
-        <li><a href="#" class="hover:text-violet-400">About</a></li>
-        <li><a href="#" class="hover:text-violet-400">Service</a></li>
-        <li><a href="#" class="hover:text-violet-400">Portfolio</a></li>
-        <li><a href="#" class="hover:text-violet-400">Project</a></li>
-        <li><a href="#" class="hover:text-violet-400">Blog</a></li>
+        <li><a href="#hero" class="hover:text-violet-400">About</a></li>
+        <li><a href="#tools" class="hover:text-violet-400">Tools used</a></li>
+        <li><a href="#projects" class="hover:text-violet-400">Project</a></li>
+        <li><a href="#Blogs" class="hover:text-violet-400">Blog</a></li>
       </div>
 
       <div class="login ">
-        <i class="fa-solid fa-bars sm:hidden m-4 hover:opacity-80 toggle" id="toggle"></i>
-        <a href="login"
-          class="btn rounded-lg shadow-lg hover:shadow-indigo-400 hidden text-md sm:block bg-gradient-to-l from-pink-500 to-violet-700">Login</a>
+        <i class="fa-solid fa-bars sm:hidden m-4 hover:opacity-80 toggle text-2xl" id="toggle"></i>
+        <a href="login" class="btn hidden text-md sm:block text-white ">Login</a>
       </div>
     </nav>
     <!-- on mobile -->
     <div class="mobile hidden ">
-      <div class=" absolute left-0 h-full w-full bg-stone-100 list-none text-center z-[3] text-xl">
+      <div class=" absolute left-0 h-screen w-full bg-white list-none text-center z-[3] text-xl ">
         <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">About us</a>
         </li>
         <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Service</a></li>
@@ -65,68 +72,267 @@
         <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Projects</a>
         </li>
         <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Blog</a></li>
-        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="login"
-            class="btn rounded-lg shadow-lg hover:shadow-indigo-400  sm:hidden bg-violet-500 text-white ">Login</a></li>
+        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="btn text-stone-100 ">Login</a></li>
       </div>
-
     </div>
+    <!-- mobile end -->
   </header>
 
   <!-- hero section -->
-  <section id="hero" class=" h-4/5 w-4/5 mx-auto  text-white p-4 ">
-    <img id="asset" src="./pngwing.com.png" class="absolute max-h-40  left-60 top-20 
+  <section id="hero" class=" h-4/5 w-4/5 mx-auto  text-white p-4 relative ">
+    <img id="asset" src="./assets/tailwind-css.svg" class="absolute  max-h-40 hidden sm:block  
     z-[-1] sm:left-[70%] sm:max-h-[350px]">
-    <h1 class="text-5xl sm:text-8xl mt-5 font-arial font-black">Hey,iam Ankit<br><span
+
+    <img id="asset" src="./assets/git-icon.svg" class="absolute max-h-40 hidden  sm:block 
+    z-[-1] sm:left-[10%] sm:max-h-[150px]">
+    <h1 class="text-5xl sm:text-8xl pt-60 font-arial font-black">Hey,i'am Ankit<br><span
         class="text-strok-1 text-transparent"> A Web Developer &</span><br>Web designer</h1>
-    <p class="mt-5">Code is like humar.When you have to explain it, it's bad</p>
+    <p class="mt-5 pb-40 sm:pb-10 Montserrat">Code is like humar.When you have to explain it, it's bad</p>
   </section>
 
-  <!-- service include section -->
-  <section class="w-4/5 mx-auto mt-20">
-    <h1 class="text-2xl sm:text-6xl mb-20 font-arial font-black text-stone-300  ">Latest Projects</h1>
-`
+  <!-- skills -->
+   <div class="bg-[#222]  " id="tools"  > 
+    <h1 class="text-center text-4xl p-5 font-black mb-20 text-slate-200 Montserrat opanim-left">Technology and tools Worked with</h1>
+
+    <div class="scrolling-icons  sm:w-4/5 mx-auto overflow-hidden opanim-right ">
+      <div class="icon-container  flex  ">
+          <!-- FontAwesome Programming Icons -->
+          <i class="fab fa-js-square text-6xl text-yellow-500"></i>
+          <i class="fab fa-python text-6xl text-blue-500"></i>
+          <i class="fab fa-html5 text-6xl text-orange-500"></i>
+          <i class="fab fa-css3-alt text-6xl text-blue-600"></i>
+          <i class="fab fa-node text-6xl text-green-500"></i>
+          <i class="fab fa-react text-6xl text-blue-400"></i>
+          <i class="fab fa-php text-6xl text-indigo-500"></i>
+          <i class="fab fa-java text-6xl text-red-500"></i>
+          <i class="fab fa-git-alt text-6xl text-orange-600"></i>
+          <!-- Duplicate the icons for seamless looping -->
+          <i class="fab fa-js-square text-6xl text-yellow-500"></i>
+          <i class="fab fa-python text-6xl text-blue-500"></i>
+          <i class="fab fa-html5 text-6xl text-orange-500"></i>
+          <i class="fab fa-css3-alt text-6xl text-blue-600"></i>
+          <i class="fab fa-node text-6xl text-green-500"></i>
+          <i class="fab fa-react text-6xl text-blue-400"></i>
+          <i class="fab fa-php text-6xl text-indigo-500"></i>
+          <i class="fab fa-java text-6xl text-red-500"></i>
+          <i class="fab fa-git-alt text-6xl text-orange-600"></i>
+      </div>
+  </div>
+    
+    <div class="  gap-3 flex flex-wrap justify-center  content-center p-4 rounded-md sm:px-40 w-full  mx-auto opanim-left">
+      <div class="scrolling-icons  sm:w-4/5 mx-auto overflow-hidden ">
+        <div class="icon-container  flex ">
+
+
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/Django.svg" class="h-10">
+      </div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/Microsoft SQL Server.svg" class="h-14">
+      </div>
+
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/Vim.svg" class="h-14">
+      </div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/visual-studio-code-1.svg" class="h-14">
+      </div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/Bash.svg" class="h-10">
+      </div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/Nano.svg" class="h-10">
+      </div>
+
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/git-icon.svg" class="h-10">
+      </div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/tailwind-css.svg" class="h-10">
+      </div>
+
+        </div>
+        </div>
+
+
+        <div class="scrolling-icons  sm:w-4/5 mx-auto overflow-hidden ">
+          <div class="icon-container  flex opanim-right">
+
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  hover:bg-white/70 hover:scale-2  flex items-center justify-center  ">
+        <img src="./assets/PuTTY.svg" class="h-10">
+      </div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl text-orange-500 hover:bg-white/70 hover:scale-2  flex items-center justify-center  "><i class="fa-brands fa-html5"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-css3 text-blue-400"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-js text-yellow-500"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-solid fa-database text-stone-300"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-react text-blue-400"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><img src="./assets/Python.svg" class="h-10"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-github text-slate-900"></i></div>
+
+      </div>
+      </div>
+
+      <div class="scrolling-icons  sm:w-4/5 mx-auto overflow-hidden opanim-left">
+        <div class="icon-container  flex ">
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><img src="./assets/Windows 11.svg" class="h-10"></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-codepen text-stone-900"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-java text-red-600"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-linux text-stone-900"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-node text-green-600"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><img src="./assets/Ubuntu.svg" class="h-10"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><i class="fa-brands fa-bootstrap text-violet-700"></i></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><img src="./assets/jQuery.svg" class="h-10 "></div>
+      <div class="h-[100px] w-[100px] border rounded-full text-5xl  flex hover:bg-white/70 hover:scale-2 items-center justify-center "><img src="./assets/c-1.svg" class="h-10"></div>
+      </div>
+      </div>
+
+    </div>
+   </div>
+
+  <!--Projects -->
+  <section class="w-full sm:w-4/5 mx-auto mt-20 backdrop-blur" id="projects">
+    
+    <!-- divider -->
+    <section>
+      
+      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <header class="text-center">
+          <h2 class="text-xl font-bold text-slate-300 uppercase sm:text-3xl ">Latest Projects</h2>
+    
+          <p class="mx-auto mt-4 max-w-md text-gray-500">
+            Explore a curated showcase of my portfolio projects, highlighting innovative solutions, creative designs, and cutting-edge technology built to solve real-world problems
+          </p>
+        </header>
+    
+        <ul class="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <li>
+            <a href="https://github.com/Cipher-Soul/DiwaliSite" class="group relative block apear">
+              <img
+                src="./assets/DiwaliSite.jpg"
+                alt=""
+                class="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+              />
+    
+              <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                <h3 class="text-xl font-bolder text-slate-700">Diwali page project</h3>
+    
+                <span
+                  class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+                >
+                <i class="fa-brands fa-github"></i>github
+                </span>
+              </div>
+            </a>
+          </li>
+    
+          <li>
+            <a href="https://github.com/Cipher-Soul/Serial-BlogPage" class="group relative block apear">
+              <img
+                src="https://raw.githubusercontent.com/Cipher-Soul/Serial-BlogPage/main/screenShot/screenshot(1).png"
+                alt=""
+                class="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+              />
+    
+              <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                <h3 class="text-xl font-medium text-white">🔪Serial blog page</h3>
+    
+                <span
+                  class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+                >
+                  <i class="fa-brands fa-github"></i>github
+                </span>
+              </div>
+            </a>
+          </li>
+    
+          <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+            <a href="https://github.com/Cipher-Soul/Portfolio-" class="group relative block apear">
+              <img
+                src="https://raw.githubusercontent.com/Cipher-Soul/Portfolio-/main/images/Screenshot_0.png"
+                alt=""
+                class="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+              />
+    
+              <div class="absolute inset-0 flex flex-col items-start justify-end p-6">
+                <h3 class="text-xl font-medium text-white" >Ankit Portfolio</h3>
+    
+                <span
+                  class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+                >
+                <i class="fa-brands fa-github"></i>github
+                </span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
   </section>
 
-  <!-- Steps section -->
-  <section>
-  </section>
+  <!-- Blog section -->
+  <section class=" relative sm:w-4/5 sm:mx-auto bg-gray-900/50" id="Blogs">
+  
+  <div
+    class="absolute hidden sm:block top-[10%] left-[60%] rounded-full bg-gradient-to-b from-red-500 to-orange-700 h-[00px] w-[300px] z-[-1] blur-2xl">
+  </div>
+    <div class=" px-6 py-10 mx-auto">
+        <h1 class="text-2xl font-semibold text-slate-300 capitalize text-center lg:text-3xl ">my blogs</h1>
 
-  <!-- why section -->
-  <section>
+        <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2 blog-apear">
+            <div class="lg:flex">
+                <img class="object-fit sm:object-cover w-full h-56 rounded-lg lg:w-64" src="./assets/Nano.svg" alt="">
 
-  </section>
-  <!-- footer -->
-  <footer>
-  </footer>
+                <div class="flex flex-col justify-between py-6 lg:mx-6">
+                    <a href="#" class="text-xl font-semibold text-slate-300 hover:underline dark:text-white ">
+                        Nano text editer:How to use ,all shortcut keys
+                    </a>
+                    
+                    <span class="text-sm text-slate-400 dark:text-gray-300">On: 20 October 2019</span>
+                </div>
+            </div>
+
+            <div class="lg:flex blog-apear">
+                <img class="object-fit sm:object-cover w-full h-56 rounded-lg lg:w-64" src="./assets/visual-studio-code-1.svg" alt="">
+
+                <div class="flex flex-col justify-between py-6 lg:mx-6">
+                    <a href="#" class="text-xl font-semibold text-gray-300 hover:underline dark:text-white ">
+                       VSCode :Shortcut keys work without mouse
+                    </a>
+
+                    <span class="text-sm text-slate-400 dark:text-gray-300">On: 20 October 2019</span>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+</section>
+
+<!-- footer -->
+<footer class="sm:px-40 border-t border-white/10 bg-black w-full">
+  <div class=" flex  flex-col sm:flex-row items-center justify-between p-6 mx-auto space-y-4 ">
+    <a class="logo" href="#nav">
+      <img src="./assets/logomain.png" alt="logo" class="max-h-10 min-">
+    </a>
+
+      <p class="text-sm text-gray-300 ">© Copyright 2021. All Rights Reserved.</p>
+
+      <div class="flex mx-2 gap-4">
+        <a href="http://"><i class="fa-brands  fa-instagram text-3xl text-slate-400 hover:text-red-400" ></i></a>
+        
+        <a href="https://github.com/Cipher-Soul" target="_blank"><i class="fa-brands fa-github text-3xl text-slate-400 hover:text-white"  ></i></a>
+      </div>
+  </div>
+</footer>
 
   <!-- gsap for animation -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script>
-    let menu = document.querySelector("#toggle")
-
-    gsap.from('#asset', {
-      y: 60,
-      duration: 1,
-      repeat: -1,
-      yoyo: true,
-    });
-
-    menu.addEventListener('click', () => {
-      let sm_menu = document.querySelector(".mobile")
-      sm_menu.classList.toggle('hidden')
-
-      gsap.from('.mobile div', {
-        opacity: 0,
-        y: 50,
-        duration: 0.2,
-
-
-      })
-    })
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="./script.js"></script>
   </script>
 </body>
 
