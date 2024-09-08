@@ -35,9 +35,9 @@
   </style>
 </head>
 
-<body class="bg-[url('./assets/background.jpg')] bg-fixed relative" id="nav">
+<body class="bg-[url('./assets/background.jpg')] bg-fixed relative select-none" id="nav">
   <div
-    class="absolute top-2 left-2 rounded-full bg-gradient-to-b from-pink-500 to-violet-700 h-[300px] w-[300px] z-[-1] blur-2xl">
+    class="absolute top-[-150px] left-[-150px] rounded-full bg-gradient-to-b from-pink-500 to-violet-700 h-[500px] w-[500px] sm:h-[300px] sm:w-[300px] z-[-1] blur-2xl">
   </div>
   <div
     class="absolute hidden sm:block top-[10%] left-[60%] rounded-full bg-gradient-to-b from-red-500 to-orange-700 h-[300px] w-[300px] z-[-1] blur-2xl">
@@ -45,37 +45,32 @@
 
   <header class=" w-full sm:px-20  backdrop-blur-2xl  bg-white/10 sm:bg-none fixed z-[999]">
     <!-- navigation bar -->
-    <nav class="py-3 text-white flex justify-between items-center  border-b-2 border-slate-100/50 sm:border-none uppercase  Montserrats ">
+    <nav class="py-3 text-white flex justify-between items-center border-b-2 border-slate-100/50 sm:border-none uppercase Montserrats">
       <div class="logo flex items-center">
-        <img src="./assets/logomain.png" alt="logo" class="max-h-10 min-"><span class="font-black text-xl">Ankit babu</span>
+        <img src="./assets/logomain.png" alt="logo" class="max-h-10">
+        <span class="font-black text-xl">Ankit babu</span>
       </div>
-
+    
       <div class="menu hidden list-none gap-4 sm:flex">
         <li><a href="#hero" class="hover:text-violet-400">About</a></li>
         <li><a href="#tools" class="hover:text-violet-400">Tools used</a></li>
         <li><a href="#projects" class="hover:text-violet-400">Project</a></li>
         <li><a href="#Blogs" class="hover:text-violet-400">Blog</a></li>
       </div>
-
-      <div class="login ">
-        <i class="fa-solid fa-bars sm:hidden m-4 hover:opacity-80 toggle text-2xl" id="toggle"></i>
-        <a href="login" class="btn hidden text-md sm:block text-white ">Login</a>
+    
+      <div class="login">
+        <i class="fa-solid fa-bars sm:hidden m-4 hover:opacity-80 cursor-pointer text-2xl" id="toggle"></i>
       </div>
     </nav>
-    <!-- on mobile -->
-    <div class="mobile hidden ">
-      <div class=" absolute left-0 h-screen w-full bg-white list-none text-center z-[3] text-xl ">
-        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">About us</a>
-        </li>
-        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Service</a></li>
-        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Portfolio</a>
-        </li>
-        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Projects</a>
-        </li>
-        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="hover:text-violet-400">Blog</a></li>
-        <li class="py-3 border-b-2 relative opacity-1 top-0 "><a href="#" class="btn text-stone-100 ">Login</a></li>
-      </div>
+    
+    <!-- Mobile Navbar -->
+    <div id="mobileMenu" class="mobile fixed top-0 right-0 h-screen w-64 bg-white list-none text-center z-[3] text-xl transform translate-x-full transition-transform duration-500">
+      <li class="py-3 border-b-2"><a href="#hero" class="hover:text-violet-400">About us</a></li>
+      <li class="py-3 border-b-2"><a href="#tools" class="hover:text-violet-400">Tools and technology</a></li>
+      <li class="py-3 border-b-2"><a href="#projects" class="hover:text-violet-400">Projects</a></li>
+      <li class="py-3 border-b-2"><a href="#Blogs" class="hover:text-violet-400">Blog</a></li>
     </div>
+    <div id="overlay" class="fixed inset-0 bg-black opacity-50 z-[2] hidden border"></div>
     <!-- mobile end -->
   </header>
 

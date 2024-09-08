@@ -1,10 +1,25 @@
-let menu = document.querySelector("#toggle")
+const toggleButton = document.getElementById('toggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const overlay = document.getElementById('overlay');
 
 
-menu.addEventListener('click', () => {
-    let sm_menu = document.querySelector(".mobile")
-    sm_menu.classList.toggle('hidden') 
-  })
+toggleButton.addEventListener('click', () => {
+  mobileMenu.classList.toggle('translate-x-full');
+  overlay.classList.toggle('hidden'); 
+});
+
+overlay.addEventListener('click', () => {
+  mobileMenu.classList.add('translate-x-full');
+  overlay.classList.add('hidden');
+});
+
+const menuItems = document.querySelectorAll('#mobileMenu li a');
+menuItems.forEach(item => {
+  item.addEventListener('click', () => {
+    mobileMenu.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+  });
+});
 
     gsap.to(".icon-container", {
       xPercent: -50,
