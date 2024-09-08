@@ -1,7 +1,7 @@
 # ⚡Developer Portfolio Website
 
 Welcome to my portfolio website repository! This website is built using **HTML**, **Tailwind CSS**, **JavaScript**, **GSAP**, and **FontAwesome icons** to showcase my work, skills, and projects. Feel free to explore, contribute, and get inspired!
-[demo site]('/images/demo.gif')
+[demo site](./images/demo.gif)
 
 ## 🛠️ Tech Stack
 
